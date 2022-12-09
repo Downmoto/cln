@@ -1,0 +1,37 @@
+[node]
+
+{
+  key_one = a_single_string,
+  key_two: "a string with whitespaces",
+  key_three = [array, of, single, word, strings],
+  key_four = """
+  multiline
+  string
+  """,
+  key_five: {
+    key_one : "nested map" # inline comment
+  }
+  # comments start with # (hash) symbol
+}
+
+[node_two]
+
+{
+  key_one = 'int 44,
+  key_two = 'float 44.44,
+  key_three = [123, 1234] # these elements are strings
+  key_four = 'int [123, 1234] # these elements are ints
+  key_five = 'float [
+    123.456, 
+    456.789
+  ]
+}
+
+[errors]
+
+{
+  key_one = 'int 44.0,
+  key_two = 'int [five, 4, 3, 2, 1.1],
+  key_three = a string with whitespaces not surrounded by quotes,
+  key_four : "trailing commas",
+}
